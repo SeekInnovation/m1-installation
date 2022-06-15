@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #install rosetta
-# printf "A\n\n" | softwareupdate --install-rosetta
+# softwareupdate --install-rosetta --agree-to-license
 
 # download and install docker 
 # curl --output ~/Downloads/docker.dmg 'https://desktop.docker.com/mac/main/arm64/Docker.dmg'
@@ -15,7 +15,16 @@
 
 # install homebrew
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> ~/.zprofile
-eval $(/opt/homebrew/bin/brew shellenv)
+# echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> ~/.zprofile
+# eval $(/opt/homebrew/bin/brew shellenv)
+
+#Upgrade installed formulae
+brew upgrade
+
+#install nvm
+brew install nvm
+
+# Remove outdated versions from the cellar.
+brew cleanup
