@@ -24,7 +24,4 @@ eval $(/opt/homebrew/bin/brew shellenv)
 brew upgrade
 
 #install nvm
-brew install nvm
-
-# Remove outdated versions from the cellar.
-brew cleanup
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
