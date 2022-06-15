@@ -18,6 +18,7 @@
 # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> ~/.zprofile
+echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> ~/.nvmrc
 eval $(/opt/homebrew/bin/brew shellenv)
 
 #Upgrade installed formulae
@@ -25,3 +26,7 @@ brew upgrade
 
 #install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+
+echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.nvmrc
+echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> ~/.nvmrc  # This loads nvm
+echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"' >> ~/.nvmrc  # This loads nvm bash_completion
