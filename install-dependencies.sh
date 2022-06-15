@@ -11,4 +11,11 @@
 # rm ~/Downloads/Docker.dmg
 
 # install Github, VSCODE, postman, insomnia
-curl -s 'https://api.macapps.link/de/github-vscode-postman-insomnia' | sh
+# curl -s 'https://api.macapps.link/de/github-vscode-postman-insomnia' | sh
+
+# install homebrew
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> ~/.zprofile
+eval $(/opt/homebrew/bin/brew shellenv)
