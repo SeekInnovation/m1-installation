@@ -1,6 +1,3 @@
-# Tilde (~)
-    Option-n - space
-
 # Spotlight/Launcher
     command-space
 
@@ -15,6 +12,9 @@
 ## Open path
     command+shift+G
 This also works in any open file dialog!
+
+## Open terminal in folder
+TODO https://stackoverflow.com/a/47355004/1218254
 
 # Gist of lots of general macOS shortcuts
 https://gist.github.com/rosswd/b286eb4c55cf23d46271
@@ -39,3 +39,11 @@ I created a custom directory `screenshots` under my home directory.
 # Backspace as delete
 Backspace acts as delete for many actions.
 
+# F5 as refresh in Chrome
+https://www.maciverse.com/make-f5-refresh-the-browser-on-a-mac.html#:~:text=The%20standard%20mac%20refresh%20shortcut,F5%20for%20a%20browser%20refresh.
+
+# Tilde (~)
+    Option-n - space
+
+# Open terminal
+TODO
