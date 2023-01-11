@@ -2,23 +2,33 @@
 
 touch ~/.zshrc
 
+# usage: installdmg https://example.com/path/to/pkg.dmg
+function installdmg {
+    set -x
+    tempd=$(mktemp -d)
+    curl $1 > $tempd/pkg.dmg
+    listing=$(sudo hdiutil attach $tempd/pkg.dmg | grep Volumes)
+    volume=$(echo "$listing" | cut -f 3)
+    if [ -e "$volume"/*.app ]; then
+      sudo cp -rf "$volume"/*.app /Applications
+    elif [ -e "$volume"/*.pkg ]; then
+      package=$(ls -1 "$volume" | grep .pkg | head -1)
+      sudo installer -pkg "$volume"/"$package" -target /
+    fi
+    sudo hdiutil detach "$(echo "$listing" | cut -f 1)"
+    rm -rf $tempd
+    set +x
+}
+
 #install rosetta
 softwareupdate --install-rosetta --agree-to-license
 
 # download and install docker 
-curl --output ~/Downloads/docker.dmg 'https://desktop.docker.com/mac/main/arm64/Docker.dmg'
-sudo hdiutil attach ~/Downloads/Docker.dmg
-cp -r /Volumes/Docker/Docker.app /Applications/
-sudo hdiutil unmount /Volumes/Docker
-rm ~/Downloads/Docker.dmg
+installdmg https://desktop.docker.com/mac/main/arm64/Docker.dmg
 
 # download and install chrome m1
 
-curl --output ~/Downloads/chrome.dmg 'https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg'
-sudo hdiutil attach ~/Downloads/chrome.dmg
-cp -r /Volumes/Google\ Chrome/Google\ Chrome.app /Applications/
-sudo hdiutil unmount /Volumes/Google\ Chrome
-rm ~/Downloads/chrome.dmg
+installdmg https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg
 
 # install Github, VSCODE, postman, insomnia
 curl -s 'https://api.macapps.link/de/github-vscode-postman-insomnia' | sh
