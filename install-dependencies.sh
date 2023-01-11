@@ -12,6 +12,14 @@ cp -r /Volumes/Docker/Docker.app /Applications/
 sudo hdiutil unmount /Volumes/Docker
 rm ~/Downloads/Docker.dmg
 
+# download and install chrome m1
+
+curl --output ~/Downloads/chrome.dmg 'https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg'
+sudo hdiutil attach ~/Downloads/chrome.dmg
+cp -r /Volumes/Google\ Chrome/Google\ Chrome.app /Applications/
+sudo hdiutil unmount /Volumes/Google\ Chrome
+rm ~/Downloads/chrome.dmg
+
 # install Github, VSCODE, postman, insomnia
 curl -s 'https://api.macapps.link/de/github-vscode-postman-insomnia' | sh
 
