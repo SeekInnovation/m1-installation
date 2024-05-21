@@ -21,6 +21,12 @@ In Keyboard -> modifiers you can re-map the modifiers, e.g.
 * caps-lock -> fn
 I personally neither need nor want caps-lock, so I prefer an additional control button which is hard to reach for me.
 
+# Disable Language Switcher popup
+https://apple.stackexchange.com/questions/466101/removing-language-icon-from-input-fields-after-upgrading-to-macos-sonoma
+```bash
+defaults write kCFPreferencesAnyApplication TSMLanguageIndicatorEnabled 0
+```
+
 # Hostname
 The default hostname is long and not personal.
 You can change it under 'System Preferences' > 'Sharing' at the top in the field 'Computer Name'.

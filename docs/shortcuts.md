@@ -42,8 +42,11 @@ Backspace acts as delete for many actions.
 # F5 as refresh in Chrome
 https://www.maciverse.com/make-f5-refresh-the-browser-on-a-mac.html#:~:text=The%20standard%20mac%20refresh%20shortcut,F5%20for%20a%20browser%20refresh.
 
-# Tilde (~)
-    Option-n - space
-
 # Open terminal
 TODO
+
+# Common Characters with different mappings - on GER keyboard layout
+## Tilde (~)
+    Option-n - space
+## Vertical line (|)
+    Option-7
