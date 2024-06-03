@@ -31,3 +31,7 @@ defaults write kCFPreferencesAnyApplication TSMLanguageIndicatorEnabled 0
 The default hostname is long and not personal.
 You can change it under 'System Preferences' > 'Sharing' at the top in the field 'Computer Name'.
 https://support.apple.com/guide/mac-help/change-computers-local-hostname-mac-mchlp2322/mac
+
+# Toggle low-power mode in menu bar
+Install https://goodsnooze.gumroad.com/l/cooldown
+Then right-click the icon and install the shortcut.
