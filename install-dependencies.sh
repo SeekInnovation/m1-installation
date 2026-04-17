@@ -20,7 +20,7 @@ function installdmg {
     set +x
 }
 
-#install rosetta
+# install rosetta
 softwareupdate --install-rosetta --agree-to-license
 
 # download and install docker 
@@ -30,9 +30,6 @@ installdmg https://desktop.docker.com/mac/main/arm64/Docker.dmg
 
 installdmg https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg
 
-# install Github, VSCODE, postman, insomnia
-curl -s 'https://api.macapps.link/de/github-vscode-postman-insomnia' | sh
-
 # install homebrew
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -40,8 +37,11 @@ curl -s 'https://api.macapps.link/de/github-vscode-postman-insomnia' | sh
 echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> ~/.zshrc
 eval $(/opt/homebrew/bin/brew shellenv)
 
-#Upgrade installed formulae
+# Upgrade installed formulae
 brew upgrade
 
-#install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+# Install dev tools
+brew install git wget httpie jq ffmpeg yt-dlp
+
+# install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
