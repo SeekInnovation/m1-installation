@@ -25,6 +25,7 @@ brew upgrade
 # install dev tools
 echo "Installing development tools..."
 brew install git wget httpie jq ffmpeg yt-dlp
+brew install --cask gcloud-cli
 
 # install nvm
 echo "Installing nvm..."
