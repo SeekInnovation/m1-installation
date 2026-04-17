@@ -27,13 +27,10 @@ softwareupdate --install-rosetta --agree-to-license
 installdmg https://desktop.docker.com/mac/main/arm64/Docker.dmg
 
 # download and install chrome m1
-
 installdmg https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg
 
 # install homebrew
-
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
 echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> ~/.zshrc
 eval $(/opt/homebrew/bin/brew shellenv)
 
