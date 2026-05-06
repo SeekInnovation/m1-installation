@@ -20,7 +20,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo "
 # Enable Homebrew and custom shell completions
-eval \"\$(/opt/homebrew/bin/brew shellenv)\"
 autoload -Uz compinit
 compinit" >> ~/.zshrc
 
