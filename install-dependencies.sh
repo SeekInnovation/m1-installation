@@ -14,8 +14,13 @@ softwareupdate --install-rosetta --agree-to-license
 # install homebrew
 echo "Installing Homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# make brew available in the current shell session (M1 installs to /opt/homebrew)
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 echo "
 # Enable Homebrew and custom shell completions
+eval \"\$(/opt/homebrew/bin/brew shellenv)\"
 autoload -Uz compinit
 compinit" >> ~/.zshrc
 
